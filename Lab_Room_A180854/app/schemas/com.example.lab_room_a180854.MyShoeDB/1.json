@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "43c0a0617809096d994743d9c61ee054",
+    "entities": [
+      {
+        "tableName": "shoes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`shoe_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `shoe_name` TEXT NOT NULL, `shoe_price` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "shoeID",
+            "columnName": "shoe_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shoeName",
+            "columnName": "shoe_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shoePrice",
+            "columnName": "shoe_price",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "shoe_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '43c0a0617809096d994743d9c61ee054')"
+    ]
+  }
+}

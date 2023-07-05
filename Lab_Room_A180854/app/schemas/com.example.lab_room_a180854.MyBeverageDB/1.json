@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "91821ad86937ee27c2fbd5c9fa7782bc",
+    "entities": [
+      {
+        "tableName": "beverages",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`beverage_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `beverage_name` TEXT NOT NULL, `beverage_price` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "beverageID",
+            "columnName": "beverage_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "beverageName",
+            "columnName": "beverage_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "beveragePrice",
+            "columnName": "beverage_price",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "beverage_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '91821ad86937ee27c2fbd5c9fa7782bc')"
+    ]
+  }
+}
